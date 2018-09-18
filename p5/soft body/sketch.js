@@ -19,6 +19,7 @@ var angle = [];
 var frequency = [];
 
 // random x & y positions to replace mouseX & mouseY
+// need to throw this in a loop or something to continuosly generate them
 var randX = Math.random();
 var randY = Math.random();
 
