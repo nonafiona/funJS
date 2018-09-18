@@ -1,6 +1,7 @@
 // center point
 var centerX = 0.0, centerY = 0.0;
 
+
 var radius = 45, rotAngle = -90;
 var accelX = 0.0, accelY = 0.0;
 var deltaX = 0.0, deltaY = 0.0;
@@ -16,6 +17,10 @@ var nodeX = [];
 var nodeY = [];
 var angle = [];
 var frequency = [];
+
+// random x & y positions to replace mouseX & mouseY
+var randX = Math.random();
+var randY = Math.random();
 
 // soft-body dynamics
 var organicConstant = 1.0;
@@ -44,6 +49,8 @@ function setup() {
   noStroke();
   frameRate(30);
 }
+
+
 
 function draw() {
   //fade background
