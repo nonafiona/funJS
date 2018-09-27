@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>My first three.js app</title>
+		<title> dodeca-sneath-dron </title>
 		<style>
 			body { margin: 0; }
 			canvas { width: 100%; height: 100% }
@@ -16,11 +16,16 @@
 			var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
+            
+            scene.background = new THREE.Color(0xf1d1ff); // background color lmao
+            
+            // maybe I should make this into a class? 
 
-			var material = new THREE.MeshStandardMaterial( { color: 0x00ff00 } );
-            var geometry = new THREE.DodecahedronBufferGeometry(2,0);
-            var mesh = new THREE.Mesh(geometry, material);
-            scene.add(mesh);
+            // dodecahedron
+			var ddmaterial = new THREE.MeshStandardMaterial( { color: 0x4dccc9 } );
+            var ddgeometry = new THREE.DodecahedronBufferGeometry(2,0);
+            var dodeca = new THREE.Mesh(ddgeometry, ddmaterial);
+            scene.add(dodeca);
       
             var wireframe = new THREE.WireframeGeometry( geometry );
 
@@ -30,13 +35,13 @@
             var aLight = new THREE.AmbientLight(0x404040, 5);
             scene.add(aLight);
 
-			camera.position.z = 5;
+			camera.position.z = 10;
             
-            var animate = function () {
+            var animate_dd = function () {
 				requestAnimationFrame( animate );
 
-				mesh.rotation.x += 0.01;
-				mesh.rotation.y += 0.01;
+				dodeca.rotation.x += 0.01;
+				dodeca.rotation.y += 0.01;
                 
                 line.rotation.x += 0.01;
                 line.rotation.y += 0.01;
@@ -44,7 +49,12 @@
 				renderer.render( scene, camera );
 			};
 
-			animate();
+			animate_dd();
+            
+            // new geometry object :-) 
+            
+            
+            
 			
             
 		</script>
